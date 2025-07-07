@@ -85,3 +85,10 @@ Contributions are welcome! Feel free to:
 ## License
 
 This project is licensed under the [MIT License](LICENSE)
+
+---
+
+Let me know if you'd like to:
+- Add badges (e.g. build passing, license, etc.)
+- Include instructions for auto-deploy with GitHub Actions
+- Convert it into a shell-scripted auto-installer for easier reuse
