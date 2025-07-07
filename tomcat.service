@@ -1,0 +1,19 @@
+[UNIT]
+Description=Apache tomcat web Application Container
+After=network.target
+
+[Service]
+Type=forking
+
+Environment=JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+Environment=CATALINA_HOME=/opt/tomcat
+Environment=CATALINA_BASE=/opt/tomcat
+
+ExecStart=/opt/tomcat/bin/startup.sh
+ExecStop=/opt/tomcat/bin/shutdown.sh
+
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
