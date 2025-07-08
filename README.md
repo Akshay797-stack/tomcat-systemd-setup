@@ -43,6 +43,26 @@ java -version
     sudo chmod +x /opt/tomcat/bin/*.sh
   ```
 
+ ### Create Tomcat System User (Non-Login)
+   ``` bash
+      sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat
+  ```
+-r: Creates a system user (not intended for human login)
+
+-m: Creates the home directory /opt/tomcat
+
+-U: Creates a group with the same name (tomcat)
+
+-d: Sets home directory
+
+-s /bin/false: Prevents shell access (non-login user)
+
+### Set Ownership and Permissions
+  ```bash
+    sudo chown -R tomcat:tomcat /opt/tomcat
+    sudo chmod -R 755 /opt/tomcat
+  ```
+
 ### 3. Deploy Sample WAR Application
 
   ```bash
