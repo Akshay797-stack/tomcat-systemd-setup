@@ -5,6 +5,7 @@ After=network.target
 [Service]
 Type=forking
 
+#Java Environment Setup
 Environment=JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 Environment=CATALINA_HOME=/opt/tomcat
 Environment=CATALINA_BASE=/opt/tomcat
@@ -12,6 +13,11 @@ Environment=CATALINA_BASE=/opt/tomcat
 ExecStart=/opt/tomcat/bin/startup.sh
 ExecStop=/opt/tomcat/bin/shutdown.sh
 
+# Run the tomcat user/group for Security
+User=tomcat
+Group=tomcat
+
+#Automatically restart the Service
 Restart=always
 RestartSec=10
 
